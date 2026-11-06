@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thalha Mohammad Yeaf — Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf9f6; --surface:#fff; --text:#1c1b19; --muted:#5b5853; --line:#e7e3dc;
+  --accent:#b45632; --accent-soft:#f1e3da; --card:#fff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15140f; --surface:#1d1b16; --text:#f1efe9; --muted:#a6a097; --line:#352f27;
+    --accent:#e08a5d; --accent-soft:#2a211a; --card:#201e18;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15140f; --surface:#1d1b16; --text:#f1efe9; --muted:#a6a097; --line:#352f27;
+  --accent:#e08a5d; --accent-soft:#2a211a; --card:#201e18; color-scheme: dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif; margin:0 0 .3em; line-height:1.2}
+a{color:var(--accent)}
+p{line-height:1.6; color:var(--text)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);
+  background:var(--surface);z-index:10;}
+header.nav{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--surface);
+  border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px; flex-wrap:wrap; gap:10px;}
+.brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem}
+.navlinks{display:flex; gap:4px; flex-wrap:wrap}
+.navlinks a{text-decoration:none; color:var(--muted); font-weight:600; font-size:.92rem;
+  padding:8px 14px; border-radius:20px;}
+.navlinks a.active{color:var(--accent); background:var(--accent-soft)}
+main{max-width:880px; margin:0 auto; padding:40px 24px 80px;}
+.view{display:none}
+.view.active{display:block}
+.hero{display:flex; gap:32px; align-items:center; flex-wrap:wrap}
+.hero img{width:180px; height:180px; border-radius:50%; object-fit:cover; border:4px solid var(--surface);
+  box-shadow:0 0 0 1px var(--line);}
+.tag{color:var(--accent); font-weight:600; letter-spacing:.02em; text-transform:uppercase; font-size:.78rem}
+.pillbox{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+.pill{background:var(--accent-soft); color:var(--accent); font-size:.82rem; font-weight:600;
+  padding:5px 12px; border-radius:16px;}
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px 24px; margin:18px 0;}
+.card h3{font-size:1.05rem}
+.meta{color:var(--muted); font-size:.85rem; margin-bottom:8px}
+ul.clean{margin:8px 0 0; padding-left:20px; color:var(--text)}
+ul.clean li{margin-bottom:4px; line-height:1.5}
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+@media (max-width:620px){.grid2{grid-template-columns:1fr}}
+.certimg{width:100%; border-radius:10px; border:1px solid var(--line); margin-top:10px;}
+.skillgrid{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px;}
+.btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;}
+.btn{display:inline-block; text-decoration:none; font-weight:600; font-size:.9rem;
+  padding:10px 18px; border-radius:24px; border:1px solid var(--line); color:var(--text);}
+.btn.primary{background:var(--accent); color:#fff; border-color:var(--accent);}
+.photorow{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px;}
+@media (max-width:560px){.photorow{grid-template-columns:1fr}}
+.photorow figure{margin:0}
+.photorow img{width:100%; border-radius:12px; display:block; border:1px solid var(--line);}
+.photorow figcaption{font-size:.82rem; color:var(--muted); margin-top:6px;}
+.contactcard{display:flex; align-items:center; gap:14px; padding:16px 18px;}
+.contactcard .ic{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--accent);font-size:1.1rem;}
+footer{text-align:center; color:var(--muted); font-size:.82rem; padding:30px 0 50px;}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="brand">Thalha M. Yeaf</div>
+  <nav class="navlinks" id="navlinks">
+    <a href="#home" data-v="home">Home</a>
+    <a href="#resume" data-v="resume">Resume</a>
+    <a href="#projects" data-v="projects">Projects</a>
+    <a href="#contact" data-v="contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <section id="v-home" class="view">
+    <div class="hero">
+      <img src="/_blob/3846332eabea845d0942633e94002160" alt="Thalha Mohammad Yeaf">
+      <div>
+        <div class="tag">CSE Graduate · IT Support · Software Development</div>
+        <h1>Thalha Mohammad Yeaf</h1>
+        <p>Dhaka, Bangladesh &nbsp;·&nbsp; thalhayeafofficial@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>About Me</h3>
+      <p>Computer Science & Engineering graduate from the American International University–Bangladesh (AIUB),
+      with one year of hands-on IT support experience at Kazi Farms Group — maintaining Linux-based infrastructure,
+      resolving hardware and network issues, and supporting ERP, email and connectivity for a large user base.
+      I complement that practical troubleshooting background with project work in software development and
+      AI/ML, including a football management system built in C# and an English-learning web platform built
+      with JavaScript. I'm currently looking to bring this mix of support experience and technical project
+      work into a full-time IT or software role.</p>
+      <div class="pillbox">
+        <span class="pill">Java · C# · C++ · Python</span>
+        <span class="pill">JavaScript · HTML/CSS</span>
+        <span class="pill">Linux & Networking</span>
+        <span class="pill">OOP & DSA</span>
+      </div>
+      <div class="btnrow">
+        <a class="btn primary" href="#resume">View Resume</a>
+        <a class="btn" href="#projects">See Projects</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Education</h3>
+        <p class="meta">AIUB — BSc in Computer Science & Engineering (2024) · CGPA 3.56/4.00</p>
+      </div>
+      <div class="card">
+        <h3>Experience</h3>
+        <p class="meta">Trainee Officer – IT, Kazi Farms Group (2025–26) · Software Engineering Intern, Grameenphone (2024)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-resume" class="view">
+    <h2>Resume</h2>
+
+    <div class="card">
+      <h3>Work Experience</h3>
+      <p class="meta">Trainee Officer / Officer — IT &nbsp;·&nbsp; Kazi Farms Group &nbsp;·&nbsp; Sep 2025 – Sep 2026</p>
+      <ul class="clean">
+        <li>Maintained day-to-day IT performance, infrastructure and applications on Linux systems, identifying and resolving recurring issues before they affected operations.</li>
+        <li>Handled hardware, LAN, CCTV, IP phone and attendance-device complaints from staff, ensuring timely resolution and minimal downtime.</li>
+        <li>Configured and maintained network equipment and routers to keep LAN connectivity stable.</li>
+        <li>Provided network support for internet, email and ERP access for employees and new joiners.</li>
+      </ul>
+      <p class="meta" style="margin-top:16px">Software Engineering Intern &nbsp;·&nbsp; Grameenphone (GP) &nbsp;·&nbsp; 2024 (3 months)</p>
+      <ul class="clean">
+        <li>Assisted the software engineering team in developing and testing application features using Java, C++ and Python.</li>
+        <li>Applied OOP concepts and data structures & algorithms to build and optimize internal tools.</li>
+        <li>Participated in code reviews, debugging sessions and technical documentation with senior engineers.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Education</h3>
+      <ul class="clean">
+        <li><b>American International University–Bangladesh (AIUB)</b> — BSc in Computer Science & Engineering, 2024 · CGPA 3.56/4.00</li>
+        <li><b>Birsrestha Munshi Abdur Rouf Public College</b> — HSC, Science, 2020 · GPA 5.00/5.00</li>
+        <li><b>National Bank Public School and College</b> — SSC, Science, 2018 · GPA 5.00/5.00</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Skills</h3>
+      <div class="skillgrid">
+        <span class="pill">IT Support & Troubleshooting</span>
+        <span class="pill">Windows & Linux Administration</span>
+        <span class="pill">LAN/WAN & Networking</span>
+        <span class="pill">Hardware Installation</span>
+        <span class="pill">Java · C# · C++ · Python</span>
+        <span class="pill">JavaScript · HTML/CSS</span>
+        <span class="pill">OOP & DSA</span>
+        <span class="pill">Git & GitHub</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Certifications</h3>
+      <div class="grid2">
+        <figure style="margin:0"><img class="certimg" src="/_blob/cf256b866307a5b18ca1499457fa970b" alt="Cisco CCNA Network Fundamentals certificate"><figcaption class="meta">Cisco CCNA (200-301) Cert Prep: Network Fundamentals & Access — LinkedIn Learning</figcaption></figure>
+        <figure style="margin:0"><img class="certimg" src="/_blob/9818ed9212050a5f1a6d2dca3a7b3771" alt="Advanced C Programming certificate"><figcaption class="meta">Advanced C Programming Course — Udemy</figcaption></figure>
+      </div>
+      <div class="grid2" style="margin-top:18px">
+        <figure style="margin:0"><img class="certimg" src="/_blob/5d6d1041b0a2732e702fee72f8166798" alt="AI Foundations certificate"><figcaption class="meta">AI Foundations: How Artificial Intelligence Works — Google Cloud / Coursera</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-projects" class="view">
+    <h2>Projects & Activities</h2>
+
+    <div class="card"><h3>Football Management System</h3><p class="meta">C# · OOP</p>
+      <p>Desktop application for managing teams, players, fixtures and match statistics, built using object-oriented design and structured data handling.</p></div>
+
+    <div class="card"><h3>Corporate Site Management System</h3><p class="meta">Java · MySQL</p>
+      <p>An admin-panel system for managing a corporate website's content, employee records and internal announcements, with role-based access for administrators and staff.</p></div>
+
+    <div class="card"><h3>Employee Performance Predictor</h3><p class="meta">Python · Machine Learning</p>
+      <p>A beginner-level machine learning project applying basic classification techniques to historical attendance and performance data to predict performance trends.</p></div>
+
+    <div class="card"><h3>English Janala</h3><p class="meta">JavaScript · HTML · CSS</p>
+      <p>A browser-based English-learning platform offering interactive lessons, vocabulary drills and quizzes, built from scratch.</p></div>
+
+    <div class="card">
+      <h3>Co-curricular & Volunteering</h3>
+      <ul class="clean">
+        <li><b>Champion</b>, ICT Olympiad "Jarvis" (2024) — organized by AIUB Computer Club, university-wide competition.</li>
+        <li><b>Champion</b>, AOC Intra Debate Competition (2023).</li>
+        <li><b>General Secretary</b>, Science Club — Birsrestha Munshi Abdur Rouf Public College (2020).</li>
+        <li><b>Volunteer</b>, Red Crescent Youth (2024) — supported dengue-affected patients at Dhaka Medical College Hospital.</li>
+      </ul>
+      <div class="photorow">
+        <figure><img src="/_blob/525bbb97450d388e9354a6683d190f7b" alt="Thalha hosting an event at a podium"><figcaption>Hosting a session at an international conference venue</figcaption></figure>
+        <figure><img src="/_blob/8796cd57cde0166d4e8710590fe02219" alt="AIUB Computer Club recruitment team"><figcaption>With the AIUB Computer Club team at a recruitment drive</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="v-contact" class="view">
+    <h2>Contact</h2>
+    <div class="card">
+      <div class="contactcard"><div class="ic">✉</div><div><b>Email</b><br><a href="mailto:thalhayeafofficial@gmail.com">thalhayeafofficial@gmail.com</a></div></div>
+    </div>
+    <div class="card">
+      <div class="contactcard"><div class="ic">☎</div><div><b>Phone</b><br>+880 1972 174367</div></div>
+    </div>
+    <div class="card">
+      <div class="contactcard"><div class="ic">⌂</div><div><b>Address</b><br>568 Peyarabag, Moghbazar, Dhaka 1217, Bangladesh</div></div>
+    </div>
+    <div class="card">
+      <div class="contactcard"><div class="ic">in</div><div><b>LinkedIn</b><br><a href="https://linkedin.com/in/thalha-mohammad-yeaf" target="_blank" rel="noopener">linkedin.com/in/thalha-mohammad-yeaf</a></div></div>
+    </div>
+    <div class="card">
+      <div class="contactcard"><div class="ic">&lt;/&gt;</div><div><b>GitHub</b><br><a href="https://github.com/TalhaYeaf" target="_blank" rel="noopener">github.com/TalhaYeaf</a></div></div>
+    </div>
+  </section>
+
+  <footer>© 2026 Thalha Mohammad Yeaf</footer>
+</main>
+
+<script>
+const views=['home','resume','projects','contact'];
+function show(v){
+  if(!views.includes(v)) v='home';
+  views.forEach(x=>{
+    document.getElementById('v-'+x).classList.toggle('active', x===v);
+  });
+  document.querySelectorAll('#navlinks a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.v===v);
+  });
+  window.scrollTo(0,0);
+}
+function route(){ show((location.hash||'#home').slice(1)); }
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
